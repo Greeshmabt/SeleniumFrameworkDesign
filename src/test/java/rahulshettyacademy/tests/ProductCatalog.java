@@ -17,15 +17,15 @@ public class ProductCatalog extends AbstactComponent {
 	public ProductCatalog(WebDriver driver) { //Constructor class
 		super(driver);
 		this.driver= driver;
-		PageFactory.initElements(driver, this); // u have to add this step in whichever class ur usi g pagefactory
+		PageFactory.initElements(driver, this);  //mandatory pagefactory declaration
 	}
 	// List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));----for this
 	
-	@FindBy(css=".mb-3")  //PAGE FACTORY
-	List<WebElement> items;  // for findelements write as List<webelement>
+	@FindBy(css=".mb-3")  //USING PAGE FACTORY METHOD
+	List<WebElement> items;  // findelements uses List<webelement>
 	By productsBy= By.cssSelector(".mb-3"); 
 	
-	public List<WebElement> Productslist()  //changing method type to List<webelement> as u are returning list of products
+	public List<WebElement> Productslist()  //changing method type to List<webelement> as its returning list of products
 	{
 		waitForElementtoAppear(productsBy);
 		return items; //returning so that any method can use it
@@ -41,7 +41,7 @@ public class ProductCatalog extends AbstactComponent {
 	
 	By additem = By.cssSelector(".card-body button:last-of-type");
 	By toastw= By.cssSelector("#toast-container"); //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
-	// U CAN USE PAGE FACTORY LIKE BELOW
+	// USE PAGE FACTORY LIKE BELOW
 	@FindBy(css=".ng-animating")
 	WebElement spinner; //wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
 	
@@ -51,7 +51,7 @@ public class ProductCatalog extends AbstactComponent {
 		
 		WebElement prod= getProductByName(productName);
 		prod.findElement(additem).click();
-		waitForElementtoAppear(toastw); //reuse this method again where ever u need to wait
+		waitForElementtoAppear(toastw);   //reusesable method where ever waits are required
 		waitForWebElementInvisibility(spinner);
 	}
 }
