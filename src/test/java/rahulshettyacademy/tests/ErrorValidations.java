@@ -25,10 +25,10 @@ public class ErrorValidations extends BaseTest {
 		ProductCatalog productcat = new ProductCatalog(driver);// calling that method using object
 		List<WebElement>products = productcat.Productslist();// storing in webelements again
 		productcat.addProductToCart(productName);
-		productcat.goToCartPage(); //inheriting from abstract class using child class object coz its linked.
+		productcat.goToCartPage(); //inheriting from abstract class using child class object as its linked.
 		cartPage cartpage= new cartPage(driver);	
 	    Boolean match = cartpage.cartProductMatch(productName);
-	    Assert.assertFalse(match); //giving assertFalse here because i know match be false so assertion will pass
+	    Assert.assertFalse(match); //giving assertFalse here as match goes false and assertion will pass
 	}
 }
 
