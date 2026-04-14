@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import rahulshettyacademy.Abstactcomponents.AbstactComponent;
 
-public class LandingPage extends AbstactComponent { // Landing page is chil, Abstarctcomponent in parent
+public class LandingPage extends AbstactComponent { // Landing page is child class, Abstarct component is parent class
 	WebDriver driver;
 	
 	
