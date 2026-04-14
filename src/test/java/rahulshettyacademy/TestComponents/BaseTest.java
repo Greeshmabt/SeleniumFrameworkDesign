@@ -17,7 +17,7 @@ import rahulshettyacademy.pageobjects.LandingPage;
 
 public class BaseTest {
 
-	public WebDriver driver; //declaring global variables make it public so that where ever driver,lp is there it gets initialized
+	public WebDriver driver;    //declaring (driver,lp) as global variables and making it public for its access inside the class. 
 	public LandingPage lp;
 	
 	public WebDriver initializeDriver() throws IOException {
@@ -53,7 +53,7 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun=true)
 	public LandingPage launchApplication() throws IOException { //opening the url
 		driver= initializeDriver();
-		 lp = new LandingPage(driver); // i removed LandingPage here coz i initilazed globally
+		 lp = new LandingPage(driver); // LandingPage keyword removed as its initilazed globally
 		lp.goTourl();
 		return lp;	
 	}
@@ -63,5 +63,5 @@ public class BaseTest {
 	}
 }
 
-/*System.getProperty("user.dir")---this means who ever uses this code automatically their userpath will be fetched. 
- before it was C://User/greeshma */
+/*System.getProperty("user.dir") this fecthes userpaths automatically  
+ initially:  C://User/greeshma */
