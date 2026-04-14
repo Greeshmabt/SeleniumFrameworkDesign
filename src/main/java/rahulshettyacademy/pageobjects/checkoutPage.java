@@ -45,7 +45,7 @@ public class checkoutPage extends AbstactComponent {
 	public void submit()
 	{
 		submit.click();
-		//Now create object here only bcoz its obviuous that after submit ull land on Thank u page.
+		
 		
 		
 	}
